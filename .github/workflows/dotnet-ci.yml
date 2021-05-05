@@ -61,9 +61,9 @@ jobs:
         Configuration: ${{ matrix.configuration }}
         TargetPlatform: ${{ matrix.targetplatform }}
 
-#    # Upload the MSIX package: https://github.com/marketplace/actions/upload-artifact
-#    - name: Upload build artifacts
-#      uses: actions/upload-artifact@v2
-#      with:
-#        name: MSIX Package
-#        path: ${{ env.Wap_Project_Directory }}\AppPackages
+    # Upload the package: https://github.com/actions/upload-artifact
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: Package
+        path: OKEGui\OKEGui\OKEGui\bin\${{ matrix.configuration }}\${{ matrix.targetplatform }}\
