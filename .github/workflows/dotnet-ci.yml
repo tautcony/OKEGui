@@ -45,16 +45,8 @@ jobs:
       with:
         nuget-version: '5.x'
 
-    - id: cache-nuget
-      uses: actions/cache@v2
-      with:
-        path: ${{ github.workspace }}/.nuget/packages
-        key: ${{ runner.os }}-nuget-${{ hashFiles('OKEGui/OKEGui/packages.config') }}
-
     - name: Restore Nuget packages
-      if: steps.cache-nuget.outputs.cache-hit != 'true'
-      run: |
-        nuget restore $env:Solution_Name
+      run: nuget restore $env:Solution_Name
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
