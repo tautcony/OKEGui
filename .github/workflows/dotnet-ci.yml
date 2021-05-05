@@ -77,4 +77,4 @@ jobs:
       with:
         name: Package-${{ matrix.configuration }}
         path: |
-          OKEGui\bin\${{ matrix.configuration }}\
+          OKEGui\OKEGui\bin\${{ matrix.configuration }}\
